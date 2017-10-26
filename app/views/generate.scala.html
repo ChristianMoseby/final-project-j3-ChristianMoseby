@@ -1,0 +1,22 @@
+@(activityTypes:List[ActivityType])
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<form>
+
+    <select name="activity">
+        @for(activityType <- activityTypes){
+       <option>@activityType.getActivityTypeName()</option>
+        }
+    </select>
+</form>
+
+
+
+
+</body>
+
+
+
+</html>
