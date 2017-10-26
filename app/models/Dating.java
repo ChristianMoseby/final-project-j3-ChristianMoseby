@@ -14,15 +14,12 @@ public class Dating
     @Column (name = "ActivityId")
     private int activityId;
 
-    @Id
     @Column (name= "ActivityName")
     private String activityName;
 
-    @Id
     @Column (name = "ActivityType")
     private String activityType;
 
-    @Id
     @Column (name = "Price")
     private String price;
 

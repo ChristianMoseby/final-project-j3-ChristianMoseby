@@ -1,6 +1,5 @@
 package controllers;
 
-import models.Activity;
 import models.ActivityType;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
@@ -31,7 +30,6 @@ public class DatingController extends Controller
         return ok(views.html.generate.render(activityTypes));
 
     }
-
 
 
 
