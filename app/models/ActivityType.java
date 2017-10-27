@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name ="ActivityType")
+
 public class ActivityType
 {
     @Id

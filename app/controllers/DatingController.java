@@ -1,6 +1,7 @@
 package controllers;
 
 import models.ActivityType;
+import models.Price;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
@@ -26,8 +27,15 @@ public class DatingController extends Controller
     @Transactional(readOnly = true)
     public Result getGenerate()
     {
-        List<ActivityType> activityTypes = jpaApi.em().createQuery("SELECT a FROM ActivityType a ",ActivityType.class).getResultList();
-        return ok(views.html.generate.render(activityTypes));
+        List<ActivityType> activityTypes = jpaApi.em()
+                .createQuery("SELECT a FROM ActivityType a ",ActivityType.class).getResultList();
+
+        List<Price> prices = jpaApi.em()
+                .createQuery("SELECT p FROM Price p ",Price.class).getResultList();
+
+        return ok(views.html.generate.render(activityTypes, prices));
+
+
 
     }
 

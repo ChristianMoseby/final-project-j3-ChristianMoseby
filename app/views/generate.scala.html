@@ -1,22 +1,25 @@
-@(activityTypes:List[ActivityType])
+@(activityTypes:List[ActivityType], prices:List [Price])
 
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<form>
+ <form>
+    <label> What Type of Date Would You Like?</label>
+        <select name="activity">
+            @for(activityType <- activityTypes){
+           <option>@activityType.getActivityTypeName()</option>
+            }
+        </select>
+    <br>
+    <br>
+        <select name="price">
+            @for(price<- prices){
+            <option>@price.getPriceName()</option>
+            }
+        </select>
 
-    <select name="activity">
-        @for(activityType <- activityTypes){
-       <option>@activityType.getActivityTypeName()</option>
-        }
-    </select>
-</form>
 
 
-
-
+ </form>
 </body>
-
-
-
 </html>

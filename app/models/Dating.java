@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "DatingController")
+
 
 public class Dating
 {
@@ -22,6 +22,9 @@ public class Dating
 
     @Column (name = "Price")
     private String price;
+
+    @Column (name = "Status")
+    private String status;
 
 
     public int getActivityId()
@@ -54,5 +57,23 @@ public class Dating
         this.activityType = activityType;
     }
 
+    public String getPrice()
+    {
+        return price;
+    }
 
+    public void setPrice(String price)
+    {
+        this.price = price;
+    }
+
+    public String getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(String status)
+    {
+        this.status = status;
+    }
 }
