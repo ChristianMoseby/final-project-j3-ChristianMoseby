@@ -1,23 +1,53 @@
-@(activityTypes:List[ActivityType], prices:List [Price])
+@(activityTypes:List[ActivityType], prices:List[Price], statuses:List[Status], days:List[Day], years:List[Year])
 
 <!DOCTYPE html>
 <html lang="en">
 <body>
- <form>
-    <label> What Type of Date Would You Like?</label>
-        <select name="activity">
-            @for(activityType <- activityTypes){
-           <option>@activityType.getActivityTypeName()</option>
-            }
-        </select>
-    <br>
-    <br>
-        <select name="price">
-            @for(price<- prices){
-            <option>@price.getPriceName()</option>
-            }
-        </select>
 
+<h1>Date Idea Generator </h1>
+<br>
+ <form>
+    <label> What type of date would you like?</label>
+        <select name="activityId">
+            @for(activityType <- activityTypes){
+            <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
+            }
+        </select>
+     <br>
+     <br>
+     <label>What is your relationship status?</label>
+     <select name="statusId">
+         @for(status <- statuses){
+         <option value="@status.getStatusId()">@status.getStatusName()</option>
+         }
+     </select>
+     <br>
+     <br>
+     <label>What is your budget? </label>
+     <select name="priceId">
+         @for(price<- prices){
+         <option value="@price.getPriceId()">@price.getPriceName()</option>
+         }
+     </select>
+     <br>
+     <br>
+     <label>What time of day? </label>
+     <select name="dayId">
+         @for(day<- days){
+         <option value="@day.getTimeOfDayId()">@day.getTimeOfDayName()</option>
+         }
+     </select>
+     <br>
+     <br>
+     <label>Which season? </label>
+     <select name="yearId">
+         @for(year<- years){
+         <option value="@year.getTimeOfYearId()">@year.getTimeOfYearName()</option>
+         }
+     </select>
+     <br>
+     <br>
+     <input type="submit" value="Submit">
 
 
  </form>

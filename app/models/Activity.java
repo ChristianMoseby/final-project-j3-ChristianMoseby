@@ -18,23 +18,18 @@ public class Activity
     @Column (name = "ActivityName")
     private String activityName;
 
-    @Id
     @Column (name = "ActivityTypeId")
     private int activityTypeId;
 
-    @Id
     @Column (name = "StatusId")
     private int statusId;
 
-    @Id
     @Column (name = "PriceId")
     private int priceId;
 
-    @Id
     @Column (name = "TimeOfYearId")
     private int timeOfYearId;
 
-    @Id
     @Column (name = "TimeOfDayId")
     private int timeOfDayId;
 

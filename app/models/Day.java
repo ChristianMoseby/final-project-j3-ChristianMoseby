@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Day")
+@Table (name = "TimeOfDay")
 
 public class Day
 {
