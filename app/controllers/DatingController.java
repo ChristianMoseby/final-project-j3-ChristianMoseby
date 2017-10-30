@@ -1,6 +1,7 @@
 package controllers;
 
 import models.*;
+import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
@@ -43,6 +44,38 @@ public class DatingController extends Controller
 
 
         return ok(views.html.generate.render(activityTypes,prices,statuses,days,years));
+
+
+    }
+    @Transactional(readOnly = true)
+    public Result postGenerate()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int activityTypeId = Integer.parseInt(form.get("activityTypeId"));
+        int priceId = Integer.parseInt(form.get("priceId"));
+        int statusId = Integer.parseInt(form.get("statusId"));
+        int timeOfDayId = Integer.parseInt(form.get("timeOfDayId"));
+        int timeOfYearId =Integer.parseInt(form.get("timeOfYearId"));
+
+        Activity activity = jpaApi.em().createQuery
+                ("SELECT a FROM Activity a WHERE activityTypeId = :activityTypeId" +
+                        " AND priceId = :priceId AND statusId = :statusId " +
+                        " AND timeOfDayId = :timeOfDayId AND timeOfYearId =:timeOfYearId", Activity.class)
+                .setParameter("activityTypeId", activityTypeId).setParameter("priceId", priceId)
+                .setParameter("statusId", statusId).setParameter("timeOfDayId", timeOfDayId)
+                .setParameter("timeOfYearId", timeOfYearId).getSingleResult();
+
+
+        return ok(views.html.activity.render(activity));
+
+
+
+
+
+
+
+
+
 
 
     }

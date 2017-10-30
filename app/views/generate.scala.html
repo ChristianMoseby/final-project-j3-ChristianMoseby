@@ -4,52 +4,52 @@
 <html lang="en">
 <body>
 
-<h1>Date Idea Generator </h1>
+<h1>Date Plans Generator </h1>
 <br>
- <form>
-    <label> What type of date would you like?</label>
-        <select name="activityId">
-            @for(activityType <- activityTypes){
-            <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
-            }
-        </select>
-     <br>
-     <br>
-     <label>What is your relationship status?</label>
-     <select name="statusId">
-         @for(status <- statuses){
-         <option value="@status.getStatusId()">@status.getStatusName()</option>
-         }
-     </select>
-     <br>
-     <br>
-     <label>What is your budget? </label>
-     <select name="priceId">
-         @for(price<- prices){
-         <option value="@price.getPriceId()">@price.getPriceName()</option>
-         }
-     </select>
-     <br>
-     <br>
-     <label>What time of day? </label>
-     <select name="dayId">
-         @for(day<- days){
-         <option value="@day.getTimeOfDayId()">@day.getTimeOfDayName()</option>
-         }
-     </select>
-     <br>
-     <br>
-     <label>Which season? </label>
-     <select name="yearId">
-         @for(year<- years){
-         <option value="@year.getTimeOfYearId()">@year.getTimeOfYearName()</option>
-         }
-     </select>
-     <br>
-     <br>
-     <input type="submit" value="Submit">
+<form method="POST">
+    <label> <h4> What type of date would you like? </h4></label>
+    <select name="activityTypeId">
+        @for(activityType <- activityTypes){
+        <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label><h4>What is your relationship status?</h4></label>
+    <select name="statusId">
+        @for(status <- statuses){
+        <option value="@status.getStatusId()">@status.getStatusName()</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label><h4>What is your budget?</h4> </label>
+    <select name="priceId">
+        @for(price<- prices){
+        <option value="@price.getPriceId()">@price.getPriceName()</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label><h4>What time of day?</h4> </label>
+    <select name="timeOfDayId">
+        @for(day<- days){
+        <option value="@day.getTimeOfDayId()">@day.getTimeOfDayName()</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label><h4>Which season?</h4> </label>
+    <select name="timeOfYearId">
+        @for(year<- years){
+        <option value="@year.getTimeOfYearId()">@year.getTimeOfYearName()</option>
+        }
+    </select>
+    <br>
+    <br>
+    <p><input type="submit" value="Plan my date!"></p>
 
 
- </form>
+</form>
 </body>
 </html>

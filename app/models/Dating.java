@@ -26,6 +26,11 @@ public class Dating
     @Column (name = "Status")
     private String status;
 
+    @Column (name = "TimeOfDay")
+    private String timeOfDay;
+
+    @Column (name= "TimeOfYear")
+    private String timeOfYear;
 
     public int getActivityId()
     {
@@ -75,5 +80,25 @@ public class Dating
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public String getTimeOfDay()
+    {
+        return timeOfDay;
+    }
+
+    public void setTimeOfDay(String timeOfDay)
+    {
+        this.timeOfDay = timeOfDay;
+    }
+
+    public String getTimeOfYear()
+    {
+        return timeOfYear;
+    }
+
+    public void setTimeOfYear(String timeOfYear)
+    {
+        this.timeOfYear = timeOfYear;
     }
 }

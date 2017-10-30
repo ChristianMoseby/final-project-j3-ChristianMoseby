@@ -33,6 +33,10 @@ public class Activity
     @Column (name = "TimeOfDayId")
     private int timeOfDayId;
 
+    @Column (name = "Website")
+    private String website;
+
+
     public int getActivityId()
     {
         return activityId;
@@ -101,5 +105,15 @@ public class Activity
     public void setTimeOfDayId(int timeOfDayId)
     {
         this.timeOfDayId = timeOfDayId;
+    }
+
+    public String getWebsite()
+    {
+        return website;
+    }
+
+    public void setWebsite(String website)
+    {
+        this.website = website;
     }
 }

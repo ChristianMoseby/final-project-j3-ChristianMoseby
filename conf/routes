@@ -12,3 +12,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 GET     /generate              controllers.DatingController.getGenerate
+POST    /generate              controllers.DatingController.postGenerate
