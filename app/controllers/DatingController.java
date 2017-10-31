@@ -7,6 +7,7 @@ import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.dating;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -69,17 +70,25 @@ public class DatingController extends Controller
         return ok(views.html.activity.render(activity));
 
 
-
-
-
-
-
-
-
-
-
     }
 
+    @Transactional (readOnly = true)
+    public Result getPhoto(int activityId)
+    {
+        Activity activity = jpaApi.em().createQuery
+                ("SELECT a FROM Activity a WHERE activityId = :activityId",Activity.class)
+         .setParameter("activityId",activityId).getSingleResult();
+
+        if (activity.getPhoto() == null)
+        {
+            return null;
+        }
+        else
+
+
+        return ok(activity.getPhoto()).as("image.jpg");
+
+    }
 
 
 

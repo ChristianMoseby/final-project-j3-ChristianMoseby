@@ -36,6 +36,8 @@ public class Activity
     @Column (name = "Website")
     private String website;
 
+    @Column (name = "Photo")
+    private byte [] photo;
 
     public int getActivityId()
     {
@@ -115,5 +117,15 @@ public class Activity
     public void setWebsite(String website)
     {
         this.website = website;
+    }
+
+    public byte[] getPhoto()
+    {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo)
+    {
+        this.photo = photo;
     }
 }
