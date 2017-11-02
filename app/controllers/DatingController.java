@@ -117,6 +117,27 @@ public class DatingController extends Controller
         return ok(views.html.activity.render(activity));
     }
 
+    @Transactional (readOnly = true)
+    public Result getActivities()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int activityTypeId = Integer.parseInt(form.get("activityTypeId"));
+        int priceId = Integer.parseInt(form.get("priceId"));
+        int statusId = Integer.parseInt(form.get("statusId"));
+        int timeOfDayId = Integer.parseInt(form.get("timeOfDayId"));
+        int timeOfYearId =Integer.parseInt(form.get("timeOfYearId"));
+
+        List<Activity> activities = jpaApi.em().createQuery
+                ("SELECT a FROM Activity a WHERE activityTypeId = :activityTypeId" +
+                        " AND priceId = :priceId AND statusId = :statusId " +
+                        " AND timeOfDayId = :timeOfDayId AND timeOfYearId =:timeOfYearId", Activity.class)
+                .setParameter("activityTypeId", activityTypeId).setParameter("priceId", priceId)
+                .setParameter("statusId", statusId).setParameter("timeOfDayId", timeOfDayId)
+                .setParameter("timeOfYearId", timeOfYearId).getResultList();
+
+
+        return ok(views.html.activities.render(activities));
+    }
     public Result restart()
     {
         return redirect(routes.DatingController.getGenerate());

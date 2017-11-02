@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Thu Nov 02 15:27:09 CDT 2017
+// @DATE:Thu Nov 02 16:08:38 CDT 2017
 
 package router
 
@@ -54,6 +54,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getPhoto/""" + "$" + """id<[^/]+>""", """controllers.DatingController.getPhoto(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restart""", """controllers.DatingController.restart"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """generateRandom""", """controllers.DatingController.generateRandom"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getActivities""", """controllers.DatingController.getActivities"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -180,6 +181,23 @@ class Routes(
     )
   )
 
+  // @LINE:19
+  private[this] lazy val controllers_DatingController_getActivities7_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getActivities")))
+  )
+  private[this] lazy val controllers_DatingController_getActivities7_invoker = createInvoker(
+    DatingController_1.getActivities,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DatingController",
+      "getActivities",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """getActivities"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -223,6 +241,12 @@ class Routes(
     case controllers_DatingController_generateRandom6_route(params) =>
       call { 
         controllers_DatingController_generateRandom6_invoker.call(DatingController_1.generateRandom)
+      }
+  
+    // @LINE:19
+    case controllers_DatingController_getActivities7_route(params) =>
+      call { 
+        controllers_DatingController_getActivities7_invoker.call(DatingController_1.getActivities)
       }
   }
 }

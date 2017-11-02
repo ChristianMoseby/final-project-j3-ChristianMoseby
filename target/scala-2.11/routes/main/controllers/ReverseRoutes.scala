@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Thu Nov 02 15:27:09 CDT 2017
+// @DATE:Thu Nov 02 16:08:38 CDT 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -30,6 +30,12 @@ package controllers {
     def getPhoto(id:Integer): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "getPhoto/" + implicitly[PathBindable[Integer]].unbind("id", id))
+    }
+  
+    // @LINE:19
+    def getActivities(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "getActivities")
     }
   
     // @LINE:14
