@@ -32,14 +32,21 @@ class activity extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Fo
 Seq[Any](format.raw/*1.21*/("""
 
 """),format.raw/*3.1*/("""<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <body>
 
 
 
-<h1><a href=""""),_display_(/*9.15*/activity/*9.23*/.getWebsite),format.raw/*9.34*/(""""> """),_display_(/*9.38*/activity/*9.46*/.getActivityName()),format.raw/*9.64*/("""</a></h1>
+<h1> <a href=""""),_display_(/*9.16*/activity/*9.24*/.getWebsite),format.raw/*9.35*/(""""> """),_display_(/*9.39*/activity/*9.47*/.getActivityName()),format.raw/*9.65*/("""</a> </h1>
 
-<img src="/getPhoto/"""),_display_(/*11.22*/activity/*11.30*/.getActivityId),format.raw/*11.44*/("""" width="500">
+
+<img src="/getPhoto/"""),_display_(/*12.22*/activity/*12.30*/.getActivityId),format.raw/*12.44*/(""""class="img-rounded" width="500">
+<br>
+<br>
+<form action="/restart">
+<p><input type="submit" value="Start Over" ></p>
+</form>
+
 
 </body>
 </html>
@@ -63,11 +70,11 @@ Seq[Any](format.raw/*1.21*/("""
 object activity extends activity_Scope0.activity
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 31 13:57:31 CDT 2017
+                  DATE: Thu Nov 02 13:06:24 CDT 2017
                   SOURCE: C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/app/views/activity.scala.html
-                  HASH: 2c17de8a97ca0722982c2ff95da6f3001aacd20d
-                  MATRIX: 753->1|867->20|897->24|986->87|1002->95|1033->106|1063->110|1079->118|1117->136|1178->170|1195->178|1230->192
-                  LINES: 27->1|32->1|34->3|40->9|40->9|40->9|40->9|40->9|40->9|42->11|42->11|42->11
+                  HASH: 228eab44f13495b2525e95417490f4ca90ac26c6
+                  MATRIX: 753->1|867->20|897->24|1023->124|1039->132|1070->143|1100->147|1116->155|1154->173|1218->210|1235->218|1270->232
+                  LINES: 27->1|32->1|34->3|40->9|40->9|40->9|40->9|40->9|40->9|43->12|43->12|43->12
                   -- GENERATED --
               */
           

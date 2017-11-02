@@ -63,46 +63,43 @@ INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId
 Values (14,"Live Music", 3,1,2,2,1,'https://www.kingslivemusic.com/music');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (15,"Dance Class", 1,3,2,2,2,'http://www.rcdancecenter.com/curriculum_rock_city_adults.shtml');
+Values (15,"Ballroom Dance Lessons", 1,3,2,2,2,'http://www.blsdance.org/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
 Values (16,"Wine Tasting",1,2,2,1,1,'http://www.wiederkehrwines.com/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (17, "Horse-Drawn Carriage Ride", 1,1,3,2,2,'http://www.littlerockcarriagecompany.com/#');
+Values (17, "Board Game Night",3,2,1,2,2,'https://www.boardgamequest.com/top-10-couples-date-night-games/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (18, "Board Game Night",3,2,1,2,2,'https://www.boardgamequest.com/top-10-couples-date-night-games/');
+Values (18, "Coffee & Pastries", 3,1,2,3,2,'http://andina-cafe.com/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (19, "Coffee & Pastries", 3,1,2,3,2,'http://andina-cafe.com/');
+Values (19, "Cooking Class", 1,2,3,3,1,'https://www.eggshellskitchencompany.com/collections/cooking-classes');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (20, "Cooking Class", 1,2,3,3,1,'https://www.eggshellskitchencompany.com/collections/cooking-classes');
+Values (20, "Star Gazing", 1,1,1,2,1,'http://www.welovedates.com/date-ideas/outdoor-date-ideas/stargazing/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (21, "Couples Massage", 1,3,3,1,1,'https://rejuvenationclinic.com/day-spa/massages/');
+Values (21, "Drive-in Movie", 3,1,2,2,1,'https://112driveintheatre.com/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (22, "Star Gazing", 1,1,1,2,1,'http://www.welovedates.com/date-ideas/outdoor-date-ideas/stargazing/');
+Values (22, "Bike Ride", 2,2,1,1,1,'http://arkansasrivertrail.org/activities/biking/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (23, "Drive-in Movie", 3,1,2,2,1,'https://112driveintheatre.com/');
+Values (23, "Fishing",3,2,1,1,1,'https://www.arkansas.com/lake/lake-maumelle/49');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (24, "Bike Ride", 2,2,1,1,1,'http://arkansasrivertrail.org/activities/biking/');
+Values (24, "Horseback Riding", 3,1,2,1,1,'http://www.woffordranch.org/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (25, "Fishing",3,2,1,1,1,'https://www.arkansas.com/lake/lake-maumelle/49');
+Values (25, "Hot Air Balloon Ride", 2,1,3,1,1,'http://www.soaringsports.com/balloon-rides/little-rock/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (26, "Horseback Riding", 3,1,2,1,1,'http://www.woffordranch.org/');
+Values (26,"Steakhouse Dinner",1,3,3,2,1,'http://www.arthursprimesteakhouse.com/');
 
 INSERT INTO Activity (ActivityId, ActivityName, ActivityTypeId, StatusId,PriceId,TimeOfDayId,TimeOfYearId,Website)
-Values (27, "Hot Air Balloon Ride", 2,1,3,1,1,'http://www.soaringsports.com/balloon-rides/little-rock/');
-
-
-
+Values (27, "Helicopter Ride", 2,1,3,1,1,'http://www.geohelilittlerock.com/index.php');
 
 
 

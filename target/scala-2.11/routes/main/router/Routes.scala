@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Tue Oct 31 13:59:18 CDT 2017
+// @DATE:Thu Nov 02 15:27:09 CDT 2017
 
 package router
 
@@ -52,6 +52,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """generate""", """controllers.DatingController.getGenerate"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """generate""", """controllers.DatingController.postGenerate"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getPhoto/""" + "$" + """id<[^/]+>""", """controllers.DatingController.getPhoto(id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restart""", """controllers.DatingController.restart"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """generateRandom""", """controllers.DatingController.generateRandom"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -144,6 +146,40 @@ class Routes(
     )
   )
 
+  // @LINE:17
+  private[this] lazy val controllers_DatingController_restart5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("restart")))
+  )
+  private[this] lazy val controllers_DatingController_restart5_invoker = createInvoker(
+    DatingController_1.restart,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DatingController",
+      "restart",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """restart"""
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_DatingController_generateRandom6_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("generateRandom")))
+  )
+  private[this] lazy val controllers_DatingController_generateRandom6_invoker = createInvoker(
+    DatingController_1.generateRandom,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DatingController",
+      "generateRandom",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """generateRandom"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -175,6 +211,18 @@ class Routes(
     case controllers_DatingController_getPhoto4_route(params) =>
       call(params.fromPath[Integer]("id", None)) { (id) =>
         controllers_DatingController_getPhoto4_invoker.call(DatingController_1.getPhoto(id))
+      }
+  
+    // @LINE:17
+    case controllers_DatingController_restart5_route(params) =>
+      call { 
+        controllers_DatingController_restart5_invoker.call(DatingController_1.restart)
+      }
+  
+    // @LINE:18
+    case controllers_DatingController_generateRandom6_route(params) =>
+      call { 
+        controllers_DatingController_generateRandom6_invoker.call(DatingController_1.generateRandom)
       }
   }
 }

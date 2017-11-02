@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Tue Oct 31 13:59:18 CDT 2017
+// @DATE:Thu Nov 02 15:27:09 CDT 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -20,16 +20,28 @@ package controllers {
     }
 
   
-    // @LINE:14
-    def getGenerate(): Call = {
+    // @LINE:17
+    def restart(): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "generate")
+      Call("GET", _prefix + { _defaultPrefix } + "restart")
     }
   
     // @LINE:16
     def getPhoto(id:Integer): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "getPhoto/" + implicitly[PathBindable[Integer]].unbind("id", id))
+    }
+  
+    // @LINE:14
+    def getGenerate(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "generate")
+    }
+  
+    // @LINE:18
+    def generateRandom(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "generateRandom")
     }
   
     // @LINE:15

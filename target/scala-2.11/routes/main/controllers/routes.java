@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Tue Oct 31 13:59:18 CDT 2017
+// @DATE:Thu Nov 02 15:27:09 CDT 2017
 
 package controllers;
 

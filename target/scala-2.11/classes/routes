@@ -13,4 +13,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /generate              controllers.DatingController.getGenerate
 POST    /generate              controllers.DatingController.postGenerate
-GET     /getPhoto/:id           controllers.DatingController.getPhoto(id:Integer)
+GET     /getPhoto/:id          controllers.DatingController.getPhoto(id:Integer)
+GET     /restart               controllers.DatingController.restart
+POST    /generateRandom        controllers.DatingController.generateRandom

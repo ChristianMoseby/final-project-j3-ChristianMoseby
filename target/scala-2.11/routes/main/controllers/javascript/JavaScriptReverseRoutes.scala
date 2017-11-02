@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Tue Oct 31 13:59:18 CDT 2017
+// @DATE:Thu Nov 02 15:27:09 CDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -23,12 +23,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
-    def getGenerate: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DatingController.getGenerate",
+    // @LINE:17
+    def restart: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DatingController.restart",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "generate"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restart"})
         }
       """
     )
@@ -39,6 +39,26 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getPhoto/" + (""" + implicitly[PathBindable[Integer]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:14
+    def getGenerate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DatingController.getGenerate",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "generate"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def generateRandom: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DatingController.generateRandom",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "generateRandom"})
         }
       """
     )
