@@ -33,50 +33,67 @@ Seq[Any](format.raw/*1.113*/("""
 
 """),format.raw/*3.1*/("""<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/lib/bootstrap-select/css/bootstrap-select.min.css">
+    <script src="/assets/lib/bootstrap-select/js/bootstrap-select.js"></script>
+</head>
 <body>
-
-
-<h1>Date Plans Generator </h1>
+<h1 align="center">Date Plans Generator </h1>
 <br>
-<form method="POST" action="/getActivities">
-    <label> <h4> What type of date would you like? </h4></label>
-    <select name="activityTypeId">
-        """),_display_(/*13.10*/for(activityType <- activityTypes) yield /*13.44*/{_display_(Seq[Any](format.raw/*13.45*/("""
-        """),format.raw/*14.9*/("""<option value=""""),_display_(/*14.25*/activityType/*14.37*/.getActivityTypeId()),format.raw/*14.57*/("""">"""),_display_(/*14.60*/activityType/*14.72*/.getActivityTypeName()),format.raw/*14.94*/("""</option>
-        """)))}),format.raw/*15.10*/("""
-    """),format.raw/*16.5*/("""</select>
+    <form method="POST" action="/getActivities">
+        <label>What type of date would you like? </label>
+        <br>
+        <br>
+        <select name="activityTypeId" class="selectpicker" data-style="btn-default">
+            """),_display_(/*22.14*/for(activityType <- activityTypes) yield /*22.48*/{_display_(Seq[Any](format.raw/*22.49*/("""
+            """),format.raw/*23.13*/("""<option value=""""),_display_(/*23.29*/activityType/*23.41*/.getActivityTypeId()),format.raw/*23.61*/("""">"""),_display_(/*23.64*/activityType/*23.76*/.getActivityTypeName()),format.raw/*23.98*/("""</option>
+            """)))}),format.raw/*24.14*/("""
+        """),format.raw/*25.9*/("""</select>
+        <br>
+        <br>
+    <label>What is your relationship status?</label>
+        <br>
+        <br>
+    <select name="statusId" class="selectpicker" data-style="btn-default">
+        """),_display_(/*32.10*/for(status <- statuses) yield /*32.33*/{_display_(Seq[Any](format.raw/*32.34*/("""
+        """),format.raw/*33.9*/("""<option value=""""),_display_(/*33.25*/status/*33.31*/.getStatusId()),format.raw/*33.45*/("""">"""),_display_(/*33.48*/status/*33.54*/.getStatusName()),format.raw/*33.70*/("""</option>
+        """)))}),format.raw/*34.10*/("""
+    """),format.raw/*35.5*/("""</select>
     <br>
     <br>
-    <label><h4>What is your relationship status?</h4></label>
-    <select name="statusId">
-        """),_display_(/*21.10*/for(status <- statuses) yield /*21.33*/{_display_(Seq[Any](format.raw/*21.34*/("""
-        """),format.raw/*22.9*/("""<option value=""""),_display_(/*22.25*/status/*22.31*/.getStatusId()),format.raw/*22.45*/("""">"""),_display_(/*22.48*/status/*22.54*/.getStatusName()),format.raw/*22.70*/("""</option>
-        """)))}),format.raw/*23.10*/("""
-    """),format.raw/*24.5*/("""</select>
+    <label>What is your budget?</label>
+        <br>
+        <br>
+    <select name="priceId" class="selectpicker" data-style="btn-default">
+        """),_display_(/*42.10*/for(price<- prices) yield /*42.29*/{_display_(Seq[Any](format.raw/*42.30*/("""
+        """),format.raw/*43.9*/("""<option value=""""),_display_(/*43.25*/price/*43.30*/.getPriceId()),format.raw/*43.43*/("""">"""),_display_(/*43.46*/price/*43.51*/.getPriceName()),format.raw/*43.66*/("""</option>
+        """)))}),format.raw/*44.10*/("""
+    """),format.raw/*45.5*/("""</select>
     <br>
     <br>
-    <label><h4>What is your budget?</h4> </label>
-    <select name="priceId">
-        """),_display_(/*29.10*/for(price<- prices) yield /*29.29*/{_display_(Seq[Any](format.raw/*29.30*/("""
-        """),format.raw/*30.9*/("""<option value=""""),_display_(/*30.25*/price/*30.30*/.getPriceId()),format.raw/*30.43*/("""">"""),_display_(/*30.46*/price/*30.51*/.getPriceName()),format.raw/*30.66*/("""</option>
-        """)))}),format.raw/*31.10*/("""
-    """),format.raw/*32.5*/("""</select>
+    <label>What time of day?</label>
+        <br>
+        <br>
+    <select name="timeOfDayId" class="selectpicker" data-style="btn-default">
+        """),_display_(/*52.10*/for(day<- days) yield /*52.25*/{_display_(Seq[Any](format.raw/*52.26*/("""
+        """),format.raw/*53.9*/("""<option value=""""),_display_(/*53.25*/day/*53.28*/.getTimeOfDayId()),format.raw/*53.45*/("""">"""),_display_(/*53.48*/day/*53.51*/.getTimeOfDayName()),format.raw/*53.70*/("""</option>
+        """)))}),format.raw/*54.10*/("""
+    """),format.raw/*55.5*/("""</select>
     <br>
     <br>
-    <label><h4>What time of day?</h4> </label>
-    <select name="timeOfDayId">
-        """),_display_(/*37.10*/for(day<- days) yield /*37.25*/{_display_(Seq[Any](format.raw/*37.26*/("""
-        """),format.raw/*38.9*/("""<option value=""""),_display_(/*38.25*/day/*38.28*/.getTimeOfDayId()),format.raw/*38.45*/("""">"""),_display_(/*38.48*/day/*38.51*/.getTimeOfDayName()),format.raw/*38.70*/("""</option>
-        """)))}),format.raw/*39.10*/("""
-    """),format.raw/*40.5*/("""</select>
-    <br>
-    <br>
-    <label><h4>Which season?</h4> </label>
-    <select name="timeOfYearId">
-        """),_display_(/*45.10*/for(year<- years) yield /*45.27*/{_display_(Seq[Any](format.raw/*45.28*/("""
-        """),format.raw/*46.9*/("""<option value=""""),_display_(/*46.25*/year/*46.29*/.getTimeOfYearId()),format.raw/*46.47*/("""">"""),_display_(/*46.50*/year/*46.54*/.getTimeOfYearName()),format.raw/*46.74*/("""</option>
-        """)))}),format.raw/*47.10*/("""
-    """),format.raw/*48.5*/("""</select>
+    <label>Which season? </label>
+        <br>
+        <br>
+    <select name="timeOfYearId" class="selectpicker" data-style="btn-default">
+        """),_display_(/*62.10*/for(year<- years) yield /*62.27*/{_display_(Seq[Any](format.raw/*62.28*/("""
+        """),format.raw/*63.9*/("""<option value=""""),_display_(/*63.25*/year/*63.29*/.getTimeOfYearId()),format.raw/*63.47*/("""">"""),_display_(/*63.50*/year/*63.54*/.getTimeOfYearName()),format.raw/*63.74*/("""</option>
+        """)))}),format.raw/*64.10*/("""
+    """),format.raw/*65.5*/("""</select>
     <br>
     <br>
     <p><input type="submit" value="Plan my date!"></p>
@@ -104,11 +121,11 @@ Seq[Any](format.raw/*1.113*/("""
 object generate extends generate_Scope0.generate
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 02 16:08:38 CDT 2017
+                  DATE: Fri Nov 03 13:40:06 CDT 2017
                   SOURCE: C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/app/views/generate.scala.html
-                  HASH: 2a0cdaa0d562bd17216fd2c523d440ce768eeb9b
-                  MATRIX: 809->1|1016->112|1046->116|1315->358|1365->392|1404->393|1441->403|1484->419|1505->431|1546->451|1576->454|1597->466|1640->488|1691->508|1724->514|1884->647|1923->670|1962->671|1999->681|2042->697|2057->703|2092->717|2122->720|2137->726|2174->742|2225->762|2258->768|2405->888|2440->907|2479->908|2516->918|2559->934|2573->939|2607->952|2637->955|2651->960|2687->975|2738->995|2771->1001|2919->1122|2950->1137|2989->1138|3026->1148|3069->1164|3081->1167|3119->1184|3149->1187|3161->1190|3201->1209|3252->1229|3285->1235|3430->1353|3463->1370|3502->1371|3539->1381|3582->1397|3595->1401|3634->1419|3664->1422|3677->1426|3718->1446|3769->1466|3802->1472
-                  LINES: 27->1|32->1|34->3|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|45->14|45->14|46->15|47->16|52->21|52->21|52->21|53->22|53->22|53->22|53->22|53->22|53->22|53->22|54->23|55->24|60->29|60->29|60->29|61->30|61->30|61->30|61->30|61->30|61->30|61->30|62->31|63->32|68->37|68->37|68->37|69->38|69->38|69->38|69->38|69->38|69->38|69->38|70->39|71->40|76->45|76->45|76->45|77->46|77->46|77->46|77->46|77->46|77->46|77->46|78->47|79->48
+                  HASH: acc1e059d27396b8ec890de21d60cb03a765843f
+                  MATRIX: 809->1|1016->112|1046->116|1912->955|1962->989|2001->990|2043->1004|2086->1020|2107->1032|2148->1052|2178->1055|2199->1067|2242->1089|2297->1113|2334->1123|2567->1329|2606->1352|2645->1353|2682->1363|2725->1379|2740->1385|2775->1399|2805->1402|2820->1408|2857->1424|2908->1444|2941->1450|3152->1634|3187->1653|3226->1654|3263->1664|3306->1680|3320->1685|3354->1698|3384->1701|3398->1706|3434->1721|3485->1741|3518->1747|3730->1932|3761->1947|3800->1948|3837->1958|3880->1974|3892->1977|3930->1994|3960->1997|3972->2000|4012->2019|4063->2039|4096->2045|4306->2228|4339->2245|4378->2246|4415->2256|4458->2272|4471->2276|4510->2294|4540->2297|4553->2301|4594->2321|4645->2341|4678->2347
+                  LINES: 27->1|32->1|34->3|53->22|53->22|53->22|54->23|54->23|54->23|54->23|54->23|54->23|54->23|55->24|56->25|63->32|63->32|63->32|64->33|64->33|64->33|64->33|64->33|64->33|64->33|65->34|66->35|73->42|73->42|73->42|74->43|74->43|74->43|74->43|74->43|74->43|74->43|75->44|76->45|83->52|83->52|83->52|84->53|84->53|84->53|84->53|84->53|84->53|84->53|85->54|86->55|93->62|93->62|93->62|94->63|94->63|94->63|94->63|94->63|94->63|94->63|95->64|96->65
                   -- GENERATED --
               */
           

@@ -2,46 +2,63 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/lib/bootstrap-select/css/bootstrap-select.min.css">
+    <script src="/assets/lib/bootstrap-select/js/bootstrap-select.js"></script>
+</head>
 <body>
-
-
-<h1>Date Plans Generator </h1>
+<h1 align="center">Date Plans Generator </h1>
 <br>
-<form method="POST" action="/getActivities">
-    <label> <h4> What type of date would you like? </h4></label>
-    <select name="activityTypeId">
-        @for(activityType <- activityTypes){
-        <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
-        }
-    </select>
-    <br>
-    <br>
-    <label><h4>What is your relationship status?</h4></label>
-    <select name="statusId">
+    <form method="POST" action="/getActivities">
+        <label>What type of date would you like? </label>
+        <br>
+        <br>
+        <select name="activityTypeId" class="selectpicker" data-style="btn-default">
+            @for(activityType <- activityTypes){
+            <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
+            }
+        </select>
+        <br>
+        <br>
+    <label>What is your relationship status?</label>
+        <br>
+        <br>
+    <select name="statusId" class="selectpicker" data-style="btn-default">
         @for(status <- statuses){
         <option value="@status.getStatusId()">@status.getStatusName()</option>
         }
     </select>
     <br>
     <br>
-    <label><h4>What is your budget?</h4> </label>
-    <select name="priceId">
+    <label>What is your budget?</label>
+        <br>
+        <br>
+    <select name="priceId" class="selectpicker" data-style="btn-default">
         @for(price<- prices){
         <option value="@price.getPriceId()">@price.getPriceName()</option>
         }
     </select>
     <br>
     <br>
-    <label><h4>What time of day?</h4> </label>
-    <select name="timeOfDayId">
+    <label>What time of day?</label>
+        <br>
+        <br>
+    <select name="timeOfDayId" class="selectpicker" data-style="btn-default">
         @for(day<- days){
         <option value="@day.getTimeOfDayId()">@day.getTimeOfDayName()</option>
         }
     </select>
     <br>
     <br>
-    <label><h4>Which season?</h4> </label>
-    <select name="timeOfYearId">
+    <label>Which season? </label>
+        <br>
+        <br>
+    <select name="timeOfYearId" class="selectpicker" data-style="btn-default">
         @for(year<- years){
         <option value="@year.getTimeOfYearId()">@year.getTimeOfYearName()</option>
         }

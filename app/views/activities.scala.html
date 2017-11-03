@@ -1,17 +1,28 @@
 @(activities:List[Activity])
 
 <!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <script src="/assets/lib/jquery/jquery.min.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/lib/bootstrap-select/css/bootstrap-select.min.css">
+    <script src="/assets/lib/bootstrap-select/js/bootstrap-select.js"></script>
+</head>
 <body>
 
-
+<div class="row">
 @for(activity <- activities){
 
-<h1> <a href="@activity.getWebsite"> @activity.getActivityName()</a> </h1>
+<div class="col-xs-4"><h1> <a href="@activity.getWebsite"> @activity.getActivityName()</a></h1>
 
-
-<img src="/getPhoto/@activity.getActivityId"class="img-rounded" width="500">
+<img src="/getPhoto/@activity.getActivityId"class="img-rounded" width="300">
+</div>
 }
+</div>
 <br>
 <br>
 <form action="/restart">
