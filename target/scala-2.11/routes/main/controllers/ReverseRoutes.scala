@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Thu Nov 02 16:13:46 CDT 2017
+// @DATE:Sun Nov 05 14:32:13 CST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -36,6 +36,12 @@ package controllers {
     def getActivities(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "getActivities")
+    }
+  
+    // @LINE:20
+    def postDate(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "planneddate")
     }
   
     // @LINE:14

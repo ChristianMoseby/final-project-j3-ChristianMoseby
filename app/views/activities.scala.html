@@ -14,20 +14,33 @@
 </head>
 <body>
 
-<div class="row">
+<p> Select your choice to add to your calender.  </p>
 @for(activity <- activities){
 
-<div class="col-xs-4"><h1> <a href="@activity.getWebsite"> @activity.getActivityName()</a></h1>
+<h1> <a href="@activity.getWebsite"> @activity.getActivityName()</a></h1>
 
-<img src="/getPhoto/@activity.getActivityId"class="img-rounded" width="300">
+<div class="row">
+
+    Schedule your date
+    <form method="POST" action="/planneddate">
+        <input type="hidden" name="activityId" value="@activity.getActivityId">
+        <input type="date" name="planneddatetime">
+        <button type="submit">Schedule</button>
+    </form>
 </div>
+
+<img src="/getPhoto/@activity.getActivityId"class="img-rounded" width="350">
+
 }
-</div>
 <br>
 <br>
+
+
 <form action="/restart">
-    <p><input type="submit" value="Start Over" ></p>
-</form>
+    <p><input type="submit" value="Start Over" ></p></form>
+
+
+
 
 </body>
 </html>

@@ -7,10 +7,10 @@ import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.dating;
 import views.html.generate;
-
 import javax.inject.Inject;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -138,13 +138,43 @@ public class DatingController extends Controller
 
         return ok(views.html.activities.render(activities));
     }
+
     public Result restart()
     {
         return redirect(routes.DatingController.getGenerate());
     }
 
 
+    @Transactional
+    public Result postDate()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int activityId = Integer.parseInt(form.get("activityId"));
+        String formattedDate = form.get("planneddatetime");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+        Date date;
+
+        try
+        {
+            date = sdf.parse(formattedDate);
+
+        }
+        catch (Exception e)
+        {
+          date = null;
+        }
+
+        PlannedDate plannedDate = new PlannedDate();
+        plannedDate.setActivityId(activityId);
+        plannedDate.setPlannedDateTime(date);
+
+        jpaApi.em().persist(plannedDate);
+
+        return ok ("Saved date");
+
+
+    }
 
 
 

@@ -17,3 +17,4 @@ GET     /getPhoto/:id          controllers.DatingController.getPhoto(id:Integer)
 GET     /restart               controllers.DatingController.restart
 POST    /generateRandom        controllers.DatingController.generateRandom
 POST    /getActivities         controllers.DatingController.getActivities
+POST    /planneddate           controllers.DatingController.postDate

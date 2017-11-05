@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Thu Nov 02 16:13:46 CDT 2017
+// @DATE:Sun Nov 05 14:32:13 CST 2017
 
 
 package router {

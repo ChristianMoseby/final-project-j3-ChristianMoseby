@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Christian/IdeaProjects/final-project-j3-ChristianMoseby/conf/routes
-// @DATE:Thu Nov 02 16:13:46 CDT 2017
+// @DATE:Sun Nov 05 14:32:13 CST 2017
 
 package router
 
@@ -55,6 +55,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """restart""", """controllers.DatingController.restart"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """generateRandom""", """controllers.DatingController.generateRandom"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getActivities""", """controllers.DatingController.getActivities"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """planneddate""", """controllers.DatingController.postDate"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -198,6 +199,23 @@ class Routes(
     )
   )
 
+  // @LINE:20
+  private[this] lazy val controllers_DatingController_postDate8_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("planneddate")))
+  )
+  private[this] lazy val controllers_DatingController_postDate8_invoker = createInvoker(
+    DatingController_1.postDate,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DatingController",
+      "postDate",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """planneddate"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -247,6 +265,12 @@ class Routes(
     case controllers_DatingController_getActivities7_route(params) =>
       call { 
         controllers_DatingController_getActivities7_invoker.call(DatingController_1.getActivities)
+      }
+  
+    // @LINE:20
+    case controllers_DatingController_postDate8_route(params) =>
+      call { 
+        controllers_DatingController_postDate8_invoker.call(DatingController_1.postDate)
       }
   }
 }

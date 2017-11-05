@@ -12,22 +12,32 @@
     <script src="/assets/lib/bootstrap-select/js/bootstrap-select.js"></script>
 </head>
 <body>
-<h1 align="center">Date Plans Generator </h1>
+
+<div class="container">
+    <img src="/assets/images/couple-at-dinner-table-cropped.jpg" height=200">
+
+</div>
+<div class="container">
+    <div class="jumbotron" text="center"> </div>
+        <h1> Date Plans Generator</h1>
+    </div>
+
 <br>
-    <form method="POST" action="/getActivities">
-        <label>What type of date would you like? </label>
-        <br>
-        <br>
-        <select name="activityTypeId" class="selectpicker" data-style="btn-default">
-            @for(activityType <- activityTypes){
-            <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
-            }
-        </select>
-        <br>
-        <br>
+
+<form method="POST" action="/getActivities">
+    <label>What type of date would you like? </label>
+    <br>
+    <br>
+    <select name="activityTypeId" class="selectpicker" data-style="btn-default">
+        @for(activityType <- activityTypes){
+        <option value="@activityType.getActivityTypeId()">@activityType.getActivityTypeName()</option>
+        }
+    </select>
+    <br>
+    <br>
     <label>What is your relationship status?</label>
-        <br>
-        <br>
+    <br>
+    <br>
     <select name="statusId" class="selectpicker" data-style="btn-default">
         @for(status <- statuses){
         <option value="@status.getStatusId()">@status.getStatusName()</option>
@@ -36,8 +46,8 @@
     <br>
     <br>
     <label>What is your budget?</label>
-        <br>
-        <br>
+    <br>
+    <br>
     <select name="priceId" class="selectpicker" data-style="btn-default">
         @for(price<- prices){
         <option value="@price.getPriceId()">@price.getPriceName()</option>
@@ -46,8 +56,8 @@
     <br>
     <br>
     <label>What time of day?</label>
-        <br>
-        <br>
+    <br>
+    <br>
     <select name="timeOfDayId" class="selectpicker" data-style="btn-default">
         @for(day<- days){
         <option value="@day.getTimeOfDayId()">@day.getTimeOfDayName()</option>
@@ -56,8 +66,8 @@
     <br>
     <br>
     <label>Which season? </label>
-        <br>
-        <br>
+    <br>
+    <br>
     <select name="timeOfYearId" class="selectpicker" data-style="btn-default">
         @for(year<- years){
         <option value="@year.getTimeOfYearId()">@year.getTimeOfYearName()</option>
