@@ -1,7 +1,6 @@
 @(activities:List[Activity])
 
 <!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
@@ -14,32 +13,29 @@
 </head>
 <body>
 
-<p> Select your choice to add to your calender.  </p>
+<p><h5>Select your choice to add to your calendar.</h5> </p>
 @for(activity <- activities){
 
-<h1> <a href="@activity.getWebsite"> @activity.getActivityName()</a></h1>
+<h2><a href="@activity.getWebsite"> @activity.getActivityName()</a></h2>
 
-<div class="row">
-
-    Schedule your date
     <form method="POST" action="/planneddate">
-        <input type="hidden" name="activityId" value="@activity.getActivityId">
+        <div class="container">
+            <div class="row">
+            <input type="hidden" name="activityId" value="@activity.getActivityId">
         <input type="date" name="planneddatetime">
-        <button type="submit">Schedule</button>
+        <button type="submit">Add to calendar</button>
+            </div>
+        </div>
     </form>
-</div>
 
 <img src="/getPhoto/@activity.getActivityId"class="img-rounded" width="350">
-
 }
 <br>
 <br>
 
-
 <form action="/restart">
-    <p><input type="submit" value="Start Over" ></p></form>
-
-
+    <p><input type="submit" class="btn btn-default" value="Try Again" align="center"></p>
+</form>
 
 
 </body>
