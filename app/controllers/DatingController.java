@@ -91,7 +91,6 @@ public class DatingController extends Controller
 
     }
 
-
     @Transactional (readOnly = true)
     public Result generateRandom()
     {
@@ -117,7 +116,7 @@ public class DatingController extends Controller
         return ok(views.html.activity.render(activity));
     }
 
-    @Transactional (readOnly = true)
+   @Transactional (readOnly = true)
     public Result getActivities()
     {
         DynamicForm form = formFactory.form().bindFromRequest();
@@ -135,9 +134,9 @@ public class DatingController extends Controller
                 .setParameter("statusId", statusId).setParameter("timeOfDayId", timeOfDayId)
                 .setParameter("timeOfYearId", timeOfYearId).getResultList();
 
-
         return ok(views.html.activities.render(activities));
     }
+
 
     public Result restart()
     {
@@ -171,11 +170,10 @@ public class DatingController extends Controller
 
         jpaApi.em().persist(plannedDate);
 
-        return ok ("Saved date");
+        return ok ("Your date is now scheduled.");
 
 
     }
-
 
 
 }
