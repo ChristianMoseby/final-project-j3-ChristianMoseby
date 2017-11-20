@@ -115,7 +115,7 @@ public class DatingController extends Controller
 
         return ok(views.html.activity.render(activity));
     }
-
+    /*
    @Transactional (readOnly = true)
     public Result getActivities()
     {
@@ -136,7 +136,7 @@ public class DatingController extends Controller
 
         return ok(views.html.activities.render(activities));
     }
-
+*/
 
     public Result restart()
     {
